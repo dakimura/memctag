@@ -46,9 +46,7 @@ func (c *Client) generateKeyStr(k string, tags []string) (string, error) {
 }
 
 func createRevision() []byte {
-	revision := make([]byte, 1)
-	revision[0] = byte(rand.Intn(26) + 65)
-	return revision
+	return []byte(string(rand.Intn(100000)))
 }
 
 func (c *Client) setRevision(key string, revision []byte) error {
